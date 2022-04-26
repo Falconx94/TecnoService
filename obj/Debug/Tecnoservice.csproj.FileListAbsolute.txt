@@ -1,0 +1,10 @@
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.csproj.AssemblyReference.cache
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.Properties.Resources.resources
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.csproj.GenerateResource.cache
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.csproj.CoreCompileInputs.cache
+B:\Repositorios\Tecnoservice\bin\Debug\Tecnoservice.exe.config
+B:\Repositorios\Tecnoservice\bin\Debug\Tecnoservice.exe
+B:\Repositorios\Tecnoservice\bin\Debug\Tecnoservice.pdb
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.exe
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.pdb
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.Main_Form.resources
