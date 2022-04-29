@@ -16,10 +16,12 @@ namespace Tecnoservice
         {
             InitializeComponent();
         }
-        /*
-        private void Main_Form_Load(object sender, EventArgs e)
-        {
 
-        }*/
+        
+        /*
+private void Main_Form_Load(object sender, EventArgs e)
+{
+
+}*/
     }
 }
