@@ -6,6 +6,7 @@ namespace Tecnoservice.Formas
         /// <summary>
         /// Required designer variable.
         /// </summary>
+        
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -29,35 +30,39 @@ namespace Tecnoservice.Formas
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txbx_User = new System.Windows.Forms.TextBox();
+            this.Txbx_Pass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PicBox_Usuario = new System.Windows.Forms.PictureBox();
             this.BT_Login = new System.Windows.Forms.Button();
             this.Bt_Cancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_Usuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Txbx_User
             // 
-            this.textBox1.Location = new System.Drawing.Point(47, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
-            this.textBox1.TabIndex = 0;
+            this.Txbx_User.Location = new System.Drawing.Point(39, 136);
+            this.Txbx_User.Name = "Txbx_User";
+            this.Txbx_User.Size = new System.Drawing.Size(250, 20);
+            this.Txbx_User.TabIndex = 0;
             // 
-            // textBox2
+            // Txbx_Pass
             // 
-            this.textBox2.Location = new System.Drawing.Point(47, 182);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 20);
-            this.textBox2.TabIndex = 1;
+            this.Txbx_Pass.Location = new System.Drawing.Point(39, 210);
+            this.Txbx_Pass.Name = "Txbx_Pass";
+            this.Txbx_Pass.PasswordChar = '♠';
+            this.Txbx_Pass.Size = new System.Drawing.Size(250, 20);
+            this.Txbx_Pass.TabIndex = 1;
+            this.Txbx_Pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 76);
+            this.label1.Location = new System.Drawing.Point(36, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 25);
             this.label1.TabIndex = 2;
@@ -67,53 +72,65 @@ namespace Tecnoservice.Formas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 149);
+            this.label2.Location = new System.Drawing.Point(36, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña";
             // 
-            // pictureBox1
+            // PicBox_Usuario
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(325, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 240);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.PicBox_Usuario.Location = new System.Drawing.Point(325, 37);
+            this.PicBox_Usuario.Name = "PicBox_Usuario";
+            this.PicBox_Usuario.Size = new System.Drawing.Size(248, 240);
+            this.PicBox_Usuario.TabIndex = 4;
+            this.PicBox_Usuario.TabStop = false;
             // 
             // BT_Login
             // 
-            this.BT_Login.Location = new System.Drawing.Point(55, 246);
+            this.BT_Login.Location = new System.Drawing.Point(55, 255);
             this.BT_Login.Name = "BT_Login";
             this.BT_Login.Size = new System.Drawing.Size(75, 23);
             this.BT_Login.TabIndex = 5;
             this.BT_Login.Text = "Entrar";
             this.BT_Login.UseVisualStyleBackColor = true;
+            this.BT_Login.Click += new System.EventHandler(this.BT_Login_Click);
             // 
             // Bt_Cancelar
             // 
-            this.Bt_Cancelar.Location = new System.Drawing.Point(199, 246);
+            this.Bt_Cancelar.Location = new System.Drawing.Point(199, 255);
             this.Bt_Cancelar.Name = "Bt_Cancelar";
             this.Bt_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Bt_Cancelar.TabIndex = 6;
             this.Bt_Cancelar.Text = "Cancelar";
             this.Bt_Cancelar.UseVisualStyleBackColor = true;
+            this.Bt_Cancelar.Click += new System.EventHandler(this.Bt_Cancelar_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(111, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 315);
+            this.ClientSize = new System.Drawing.Size(614, 308);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Bt_Cancelar);
             this.Controls.Add(this.BT_Login);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PicBox_Usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Txbx_Pass);
+            this.Controls.Add(this.Txbx_User);
             this.Name = "Login";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_Usuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,12 +138,13 @@ namespace Tecnoservice.Formas
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txbx_User;
+        private System.Windows.Forms.TextBox Txbx_Pass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PicBox_Usuario;
         private System.Windows.Forms.Button BT_Login;
         private System.Windows.Forms.Button Bt_Cancelar;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

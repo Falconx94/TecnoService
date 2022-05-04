@@ -8,3 +8,5 @@ B:\Repositorios\Tecnoservice\bin\Debug\Tecnoservice.pdb
 B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.exe
 B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.pdb
 B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.Main_Form.resources
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.Formas.Login.resources
+B:\Repositorios\Tecnoservice\obj\Debug\Tecnoservice.Formas.Venta.resources

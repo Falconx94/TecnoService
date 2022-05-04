@@ -8,20 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tecnoservice
+namespace Tecnoservice.Formas
 {
-    public partial class Main_Form : Form
+    public partial class Venta : Form
     {
-        public Main_Form()
+        public Venta()
         {
             InitializeComponent();
         }
 
-        
-        /*
-private void Main_Form_Load(object sender, EventArgs e)
-{
-
-}*/
     }
 }
