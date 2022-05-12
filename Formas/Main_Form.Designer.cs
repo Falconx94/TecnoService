@@ -55,7 +55,9 @@ namespace Tecnoservice
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitarRefaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitarArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -69,7 +71,7 @@ namespace Tecnoservice
             this.comprasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(942, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(552, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,13 +87,13 @@ namespace Tecnoservice
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // tecnicosToolStripMenuItem
             // 
             this.tecnicosToolStripMenuItem.Name = "tecnicosToolStripMenuItem";
-            this.tecnicosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.tecnicosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tecnicosToolStripMenuItem.Text = "Tecnicos";
             // 
             // servicioToolStripMenuItem
@@ -114,7 +116,7 @@ namespace Tecnoservice
             // 
             this.reparaciónToolStripMenuItem.Name = "reparaciónToolStripMenuItem";
             this.reparaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reparaciónToolStripMenuItem.Text = "Reparación";
+            this.reparaciónToolStripMenuItem.Text = "Servicios";
             // 
             // reportesToolStripMenuItem
             // 
@@ -165,25 +167,25 @@ namespace Tecnoservice
             // registrarToolStripMenuItem
             // 
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarToolStripMenuItem.Text = "Registrar";
             // 
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             // 
             // inventarioToolStripMenuItem
@@ -249,17 +251,27 @@ namespace Tecnoservice
             this.solicitarArticulosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.solicitarArticulosToolStripMenuItem.Text = "Solicitar articulos";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(111, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(307, 272);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 486);
+            this.ClientSize = new System.Drawing.Size(552, 343);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main_Form";
             this.Text = "Tecno Service";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +305,7 @@ namespace Tecnoservice
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitarRefaccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitarArticulosToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

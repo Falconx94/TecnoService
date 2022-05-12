@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formas\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="Formas\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Servicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\Servicio.Designer.cs">
+      <DependentUpon>Servicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formas\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\Servicio.resx">
+      <DependentUpon>Servicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
