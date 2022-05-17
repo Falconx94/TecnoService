@@ -19,6 +19,12 @@ namespace Tecnoservice.Formas
         {
             InitializeComponent();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public bool Validar_Usuario()
         {
             if (user != "Usuario" && pass != "12345")

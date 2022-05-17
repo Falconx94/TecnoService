@@ -129,6 +129,7 @@ namespace Tecnoservice.Formas
             this.Controls.Add(this.Txbx_User);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicBox_Usuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
