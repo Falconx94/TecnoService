@@ -55,6 +55,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsClientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DsDispositivos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsDispositivos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Abonos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +162,17 @@
     </None>
     <None Include="DsClientes.xss">
       <DependentUpon>DsClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DsDispositivos.xsc">
+      <DependentUpon>DsDispositivos.xsd</DependentUpon>
+    </None>
+    <None Include="DsDispositivos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsDispositivos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DsDispositivos.xss">
+      <DependentUpon>DsDispositivos.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

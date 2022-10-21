@@ -42,16 +42,11 @@ namespace Tecnoservice.Formas
             this.txtID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cltIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltApPaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltApMaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltTelefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltEstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsClientes = new Tecnoservice.DsClientes();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizar = new System.Windows.Forms.ToolStripLabel();
             this.btnDeleteActive = new System.Windows.Forms.ToolStripLabel();
             this.btnDispositivo = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,7 +54,12 @@ namespace Tecnoservice.Formas
             this.Radbtn_Activo = new System.Windows.Forms.RadioButton();
             this.btnDelete = new System.Windows.Forms.Button();
             this.clientesTableAdapter = new Tecnoservice.DsClientesTableAdapters.ClientesTableAdapter();
-            this.btnActualizar = new System.Windows.Forms.ToolStripLabel();
+            this.cltIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltApPaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltApMaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltTelefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltEstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).BeginInit();
@@ -174,48 +174,6 @@ namespace Tecnoservice.Formas
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // cltIdDataGridViewTextBoxColumn
-            // 
-            this.cltIdDataGridViewTextBoxColumn.DataPropertyName = "Clt_Id";
-            this.cltIdDataGridViewTextBoxColumn.HeaderText = "Clt_Id";
-            this.cltIdDataGridViewTextBoxColumn.Name = "cltIdDataGridViewTextBoxColumn";
-            this.cltIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cltNombreDataGridViewTextBoxColumn
-            // 
-            this.cltNombreDataGridViewTextBoxColumn.DataPropertyName = "Clt_Nombre";
-            this.cltNombreDataGridViewTextBoxColumn.HeaderText = "Clt_Nombre";
-            this.cltNombreDataGridViewTextBoxColumn.Name = "cltNombreDataGridViewTextBoxColumn";
-            this.cltNombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cltApPaternoDataGridViewTextBoxColumn
-            // 
-            this.cltApPaternoDataGridViewTextBoxColumn.DataPropertyName = "Clt_Ap_Paterno";
-            this.cltApPaternoDataGridViewTextBoxColumn.HeaderText = "Clt_Ap_Paterno";
-            this.cltApPaternoDataGridViewTextBoxColumn.Name = "cltApPaternoDataGridViewTextBoxColumn";
-            this.cltApPaternoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cltApMaternoDataGridViewTextBoxColumn
-            // 
-            this.cltApMaternoDataGridViewTextBoxColumn.DataPropertyName = "Clt_Ap_Materno";
-            this.cltApMaternoDataGridViewTextBoxColumn.HeaderText = "Clt_Ap_Materno";
-            this.cltApMaternoDataGridViewTextBoxColumn.Name = "cltApMaternoDataGridViewTextBoxColumn";
-            this.cltApMaternoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cltTelefonoDataGridViewTextBoxColumn
-            // 
-            this.cltTelefonoDataGridViewTextBoxColumn.DataPropertyName = "Clt_Telefono";
-            this.cltTelefonoDataGridViewTextBoxColumn.HeaderText = "Clt_Telefono";
-            this.cltTelefonoDataGridViewTextBoxColumn.Name = "cltTelefonoDataGridViewTextBoxColumn";
-            this.cltTelefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cltEstatusDataGridViewTextBoxColumn
-            // 
-            this.cltEstatusDataGridViewTextBoxColumn.DataPropertyName = "Clt_Estatus";
-            this.cltEstatusDataGridViewTextBoxColumn.HeaderText = "Clt_Estatus";
-            this.cltEstatusDataGridViewTextBoxColumn.Name = "cltEstatusDataGridViewTextBoxColumn";
-            this.cltEstatusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataMember = "Clientes";
@@ -248,6 +206,16 @@ namespace Tecnoservice.Formas
             this.btnGuardar.Size = new System.Drawing.Size(23, 22);
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(16, 22);
+            this.btnActualizar.Text = "toolStripButton1";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnDeleteActive
             // 
@@ -312,15 +280,47 @@ namespace Tecnoservice.Formas
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
-            // btnActualizar
+            // cltIdDataGridViewTextBoxColumn
             // 
-            this.btnActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(16, 22);
-            this.btnActualizar.Text = "toolStripButton1";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.cltIdDataGridViewTextBoxColumn.DataPropertyName = "Clt_Id";
+            this.cltIdDataGridViewTextBoxColumn.HeaderText = "Id del cliente";
+            this.cltIdDataGridViewTextBoxColumn.Name = "cltIdDataGridViewTextBoxColumn";
+            this.cltIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cltNombreDataGridViewTextBoxColumn
+            // 
+            this.cltNombreDataGridViewTextBoxColumn.DataPropertyName = "Clt_Nombre";
+            this.cltNombreDataGridViewTextBoxColumn.HeaderText = "Nombre  del cliente";
+            this.cltNombreDataGridViewTextBoxColumn.Name = "cltNombreDataGridViewTextBoxColumn";
+            this.cltNombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cltApPaternoDataGridViewTextBoxColumn
+            // 
+            this.cltApPaternoDataGridViewTextBoxColumn.DataPropertyName = "Clt_Ap_Paterno";
+            this.cltApPaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Paterno ";
+            this.cltApPaternoDataGridViewTextBoxColumn.Name = "cltApPaternoDataGridViewTextBoxColumn";
+            this.cltApPaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cltApMaternoDataGridViewTextBoxColumn
+            // 
+            this.cltApMaternoDataGridViewTextBoxColumn.DataPropertyName = "Clt_Ap_Materno";
+            this.cltApMaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Materno";
+            this.cltApMaternoDataGridViewTextBoxColumn.Name = "cltApMaternoDataGridViewTextBoxColumn";
+            this.cltApMaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cltTelefonoDataGridViewTextBoxColumn
+            // 
+            this.cltTelefonoDataGridViewTextBoxColumn.DataPropertyName = "Clt_Telefono";
+            this.cltTelefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.cltTelefonoDataGridViewTextBoxColumn.Name = "cltTelefonoDataGridViewTextBoxColumn";
+            this.cltTelefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cltEstatusDataGridViewTextBoxColumn
+            // 
+            this.cltEstatusDataGridViewTextBoxColumn.DataPropertyName = "Clt_Estatus";
+            this.cltEstatusDataGridViewTextBoxColumn.HeaderText = "Estado del Cliente";
+            this.cltEstatusDataGridViewTextBoxColumn.Name = "cltEstatusDataGridViewTextBoxColumn";
+            this.cltEstatusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Clientes
             // 
@@ -380,12 +380,12 @@ namespace Tecnoservice.Formas
         private DsClientes dsClientes;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private DsClientesTableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.ToolStripLabel btnActualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cltIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cltNombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cltApPaternoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cltApMaternoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cltTelefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cltEstatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripLabel btnActualizar;
     }
 }
