@@ -50,6 +50,7 @@
     <Compile Include="Class\Cls_Abono.cs" />
     <Compile Include="Class\Cls_Cliente.cs" />
     <Compile Include="Class\Cls_Login.cs" />
+    <Compile Include="Class\Cls_Proveedores.cs" />
     <Compile Include="DsClientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +152,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DsClientes.xsc">
       <DependentUpon>DsClientes.xsd</DependentUpon>
@@ -189,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disquete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
