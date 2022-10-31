@@ -64,11 +64,11 @@ namespace Tecnoservice.Formas
         {
             Validar_estado();
             clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
-            clsprv.Prv_Razomsocial = txtRazo.Text;
+            clsprv.Prv_Razonsocial = txtRazo.Text;
             clsprv.Prv_Nombre_Contaco = txtNomContac.Text;
             clsprv.Prv_Telefono = txtTelef.Text;
             clsprv.Prv_Direccion = txtDireccion.Text;
-            clsprv.Prv_Estatus = estado;
+            clsprv.Prv_estatus = estado;
             if(clsprv.Guardar())
             {
                 MessageBox.Show("Datos Guardados Correctamente");
@@ -102,11 +102,11 @@ namespace Tecnoservice.Formas
         {
             Validar_estado();
             clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
-            clsprv.Prv_Razomsocial = txtRazo.Text;
+            clsprv.Prv_Razonsocial = txtRazo.Text;
             clsprv.Prv_Nombre_Contaco = txtNomContac.Text;
             clsprv.Prv_Telefono = txtTelef.Text;
             clsprv.Prv_Direccion = txtDireccion.Text;
-            clsprv.Prv_Estatus = estado;
+            clsprv.Prv_estatus = estado;
             if (clsprv.Actualizar())
             {
                 MessageBox.Show("Datos Guardados exitosamente");
