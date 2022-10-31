@@ -42,67 +42,78 @@ namespace Tecnoservice.Formas
             this.txtTelef = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.prvIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prvRazonsocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prvNombreContactoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prvTelefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prvDireccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prvEstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsProveedores = new Tecnoservice.DsProveedores();
             this.grpEstado = new System.Windows.Forms.GroupBox();
             this.Radbtn_Inactivo = new System.Windows.Forms.RadioButton();
             this.Radbtn_Activo = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.btnDeleteActive = new System.Windows.Forms.ToolStripLabel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.clientesTableAdapter = new Tecnoservice.DsClientesTableAdapters.ClientesTableAdapter();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsClientes = new Tecnoservice.DsClientes();
+            this.btnEliminarActive = new System.Windows.Forms.ToolStripLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.proveedoresTableAdapter = new Tecnoservice.DsProveedoresTableAdapters.ProveedoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProveedores)).BeginInit();
             this.grpEstado.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(89, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID Proveedor";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(84, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Razon Social";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 152);
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.Size = new System.Drawing.Size(85, 36);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre del contacto";
+            this.label3.Text = "Nombre del \r\ncontacto";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 192);
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(63, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Telefono";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(17, 224);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(66, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Direccion";
             // 
@@ -115,9 +126,9 @@ namespace Tecnoservice.Formas
             // 
             // txtNomContac
             // 
-            this.txtNomContac.Location = new System.Drawing.Point(129, 152);
+            this.txtNomContac.Location = new System.Drawing.Point(130, 152);
             this.txtNomContac.Name = "txtNomContac";
-            this.txtNomContac.Size = new System.Drawing.Size(142, 20);
+            this.txtNomContac.Size = new System.Drawing.Size(141, 20);
             this.txtNomContac.TabIndex = 2;
             // 
             // txtRazo
@@ -143,11 +154,76 @@ namespace Tecnoservice.Formas
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(299, 63);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.prvIdDataGridViewTextBoxColumn,
+            this.prvRazonsocialDataGridViewTextBoxColumn,
+            this.prvNombreContactoDataGridViewTextBoxColumn,
+            this.prvTelefonoDataGridViewTextBoxColumn,
+            this.prvDireccionDataGridViewTextBoxColumn,
+            this.prvEstatusDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.proveedoresBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(287, 63);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(508, 307);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(713, 307);
+            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // prvIdDataGridViewTextBoxColumn
+            // 
+            this.prvIdDataGridViewTextBoxColumn.DataPropertyName = "Prv_Id";
+            this.prvIdDataGridViewTextBoxColumn.HeaderText = "Prv_Id";
+            this.prvIdDataGridViewTextBoxColumn.Name = "prvIdDataGridViewTextBoxColumn";
+            this.prvIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prvRazonsocialDataGridViewTextBoxColumn
+            // 
+            this.prvRazonsocialDataGridViewTextBoxColumn.DataPropertyName = "Prv_Razonsocial";
+            this.prvRazonsocialDataGridViewTextBoxColumn.HeaderText = "Prv_Razonsocial";
+            this.prvRazonsocialDataGridViewTextBoxColumn.Name = "prvRazonsocialDataGridViewTextBoxColumn";
+            this.prvRazonsocialDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prvNombreContactoDataGridViewTextBoxColumn
+            // 
+            this.prvNombreContactoDataGridViewTextBoxColumn.DataPropertyName = "Prv_Nombre_Contacto";
+            this.prvNombreContactoDataGridViewTextBoxColumn.HeaderText = "Prv_Nombre_Contacto";
+            this.prvNombreContactoDataGridViewTextBoxColumn.Name = "prvNombreContactoDataGridViewTextBoxColumn";
+            this.prvNombreContactoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prvTelefonoDataGridViewTextBoxColumn
+            // 
+            this.prvTelefonoDataGridViewTextBoxColumn.DataPropertyName = "Prv_Telefono";
+            this.prvTelefonoDataGridViewTextBoxColumn.HeaderText = "Prv_Telefono";
+            this.prvTelefonoDataGridViewTextBoxColumn.Name = "prvTelefonoDataGridViewTextBoxColumn";
+            this.prvTelefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prvDireccionDataGridViewTextBoxColumn
+            // 
+            this.prvDireccionDataGridViewTextBoxColumn.DataPropertyName = "Prv_Direccion";
+            this.prvDireccionDataGridViewTextBoxColumn.HeaderText = "Prv_Direccion";
+            this.prvDireccionDataGridViewTextBoxColumn.Name = "prvDireccionDataGridViewTextBoxColumn";
+            this.prvDireccionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prvEstatusDataGridViewTextBoxColumn
+            // 
+            this.prvEstatusDataGridViewTextBoxColumn.DataPropertyName = "Prv_Estatus";
+            this.prvEstatusDataGridViewTextBoxColumn.HeaderText = "Prv_Estatus";
+            this.prvEstatusDataGridViewTextBoxColumn.Name = "prvEstatusDataGridViewTextBoxColumn";
+            this.prvEstatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "Proveedores";
+            this.proveedoresBindingSource.DataSource = this.dsProveedores;
+            // 
+            // dsProveedores
+            // 
+            this.dsProveedores.DataSetName = "DsProveedores";
+            this.dsProveedores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grpEstado
             // 
@@ -156,7 +232,7 @@ namespace Tecnoservice.Formas
             this.grpEstado.Location = new System.Drawing.Point(20, 263);
             this.grpEstado.Name = "grpEstado";
             this.grpEstado.Size = new System.Drawing.Size(207, 55);
-            this.grpEstado.TabIndex = 6;
+            this.grpEstado.TabIndex = 5;
             this.grpEstado.TabStop = false;
             this.grpEstado.Text = "Estado";
             // 
@@ -181,16 +257,17 @@ namespace Tecnoservice.Formas
             this.Radbtn_Activo.TabStop = true;
             this.Radbtn_Activo.Text = "Activo";
             this.Radbtn_Activo.UseVisualStyleBackColor = true;
+            this.Radbtn_Activo.Click += new System.EventHandler(this.Radbtn_Activo_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnGuardar,
             this.btnActualizar,
-            this.btnDeleteActive});
+            this.btnEliminarActive});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(819, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1012, 25);
             this.toolStrip1.TabIndex = 41;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -202,6 +279,7 @@ namespace Tecnoservice.Formas
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(23, 22);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
@@ -211,43 +289,37 @@ namespace Tecnoservice.Formas
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(23, 22);
             this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnDeleteActive
+            // btnEliminarActive
             // 
-            this.btnDeleteActive.Name = "btnDeleteActive";
-            this.btnDeleteActive.Size = new System.Drawing.Size(50, 22);
-            this.btnDeleteActive.Text = "Eliminar";
-            this.btnDeleteActive.ToolTipText = "Eliminar";
+            this.btnEliminarActive.Name = "btnEliminarActive";
+            this.btnEliminarActive.Size = new System.Drawing.Size(50, 22);
+            this.btnEliminarActive.Text = "Eliminar";
+            this.btnEliminarActive.ToolTipText = "Eliminar";
+            this.btnEliminarActive.Click += new System.EventHandler(this.btnEliminarActive_Click);
             // 
-            // btnDelete
+            // btnEliminar
             // 
-            this.btnDelete.Location = new System.Drawing.Point(152, 347);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 42;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Visible = false;
+            this.btnEliminar.Location = new System.Drawing.Point(152, 347);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 42;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // clientesTableAdapter
+            // proveedoresTableAdapter
             // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            // 
-            // dsClientes
-            // 
-            this.dsClientes.DataSetName = "DsClientes";
-            this.dsClientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.proveedoresTableAdapter.ClearBeforeFill = true;
             // 
             // proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 382);
-            this.Controls.Add(this.btnDelete);
+            this.ClientSize = new System.Drawing.Size(1012, 382);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.grpEstado);
             this.Controls.Add(this.dataGridView1);
@@ -262,15 +334,16 @@ namespace Tecnoservice.Formas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "proveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.proveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProveedores)).EndInit();
             this.grpEstado.ResumeLayout(false);
             this.grpEstado.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,10 +369,16 @@ namespace Tecnoservice.Formas
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripButton btnActualizar;
-        private System.Windows.Forms.ToolStripLabel btnDeleteActive;
-        private System.Windows.Forms.Button btnDelete;
-        private DsClientesTableAdapters.ClientesTableAdapter clientesTableAdapter;
-        private System.Windows.Forms.BindingSource clientesBindingSource;
-        private DsClientes dsClientes;
+        private System.Windows.Forms.ToolStripLabel btnEliminarActive;
+        private System.Windows.Forms.Button btnEliminar;
+        private DsProveedores dsProveedores;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource;
+        private DsProveedoresTableAdapters.ProveedoresTableAdapter proveedoresTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvRazonsocialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvNombreContactoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvTelefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvDireccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvEstatusDataGridViewTextBoxColumn;
     }
 }

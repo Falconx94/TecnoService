@@ -11,7 +11,7 @@ namespace Tecnoservice.Class
 {
     class Cls_Proveedores
     {
-        //BD_Conex scon = new BD_Conex();
+        BD_Conex scon = new BD_Conex();
         SqlDataReader dr;
         bool band;
 
@@ -46,7 +46,7 @@ namespace Tecnoservice.Class
             catch (Exception ex)
             {
                 band = false;
-                MessageBoxIcon.Error.ToString("Error datos no Guardados" + ex);
+                MessageBox.Show("Error datos no Guardados" + ex);
             }
             con.Close();
             return band;

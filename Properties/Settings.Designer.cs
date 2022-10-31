@@ -33,5 +33,15 @@ namespace Tecnoservice.Properties {
                 return ((string)(this["TecnoServiceConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=OROS23;Initial Catalog=TecnoService;Integrated Security=True")]
+        public string TecnoServiceConnectionString1 {
+            get {
+                return ((string)(this["TecnoServiceConnectionString1"]));
+            }
+        }
     }
 }

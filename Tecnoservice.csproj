@@ -61,6 +61,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsDispositivos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DsProveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Abonos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +181,17 @@
     <None Include="DsDispositivos.xss">
       <DependentUpon>DsDispositivos.xsd</DependentUpon>
     </None>
+    <None Include="DsProveedores.xsc">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="DsProveedores.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsProveedores.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DsProveedores.xss">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -194,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\disquete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
