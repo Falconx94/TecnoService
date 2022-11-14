@@ -216,7 +216,9 @@ namespace Tecnoservice.Formas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Abonos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abonos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Abonos_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

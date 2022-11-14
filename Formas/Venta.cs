@@ -17,5 +17,10 @@ namespace Tecnoservice.Formas
             InitializeComponent();
         }
 
+        private void Venta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form Menu = new Menu_Principal();
+            Menu.Show();
+        }
     }
 }

@@ -30,7 +30,6 @@ namespace Tecnoservice.Formas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proveedores));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,17 +53,22 @@ namespace Tecnoservice.Formas
             this.Radbtn_Inactivo = new System.Windows.Forms.RadioButton();
             this.Radbtn_Activo = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripLabel();
+            this.btnActualizar = new System.Windows.Forms.ToolStripLabel();
             this.btnEliminarActive = new System.Windows.Forms.ToolStripLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnEliminar = new System.Windows.Forms.Button();
             this.proveedoresTableAdapter = new Tecnoservice.DsProveedoresTableAdapters.ProveedoresTableAdapter();
+            this.dsPROVEEDOR = new Tecnoservice.dsPROVEEDOR();
+            this.proveedoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedoresTableAdapter1 = new Tecnoservice.dsPROVEEDORTableAdapters.ProveedoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProveedores)).BeginInit();
             this.grpEstado.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPROVEEDOR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -165,13 +169,13 @@ namespace Tecnoservice.Formas
             this.prvTelefonoDataGridViewTextBoxColumn,
             this.prvDireccionDataGridViewTextBoxColumn,
             this.prvEstatusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.proveedoresBindingSource;
+            this.dataGridView1.DataSource = this.proveedoresBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(287, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(713, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(647, 307);
             this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // prvIdDataGridViewTextBoxColumn
             // 
@@ -261,40 +265,37 @@ namespace Tecnoservice.Formas
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnGuardar,
             this.btnActualizar,
             this.btnEliminarActive});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1012, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(945, 25);
             this.toolStrip1.TabIndex = 41;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGuardar.Image = global::Tecnoservice.Properties.Resources.disquete;
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(23, 22);
+            this.btnGuardar.Size = new System.Drawing.Size(57, 22);
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizar.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(23, 22);
+            this.btnActualizar.Size = new System.Drawing.Size(69, 22);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminarActive
             // 
             this.btnEliminarActive.Name = "btnEliminarActive";
-            this.btnEliminarActive.Size = new System.Drawing.Size(50, 22);
+            this.btnEliminarActive.Size = new System.Drawing.Size(59, 22);
             this.btnEliminarActive.Text = "Eliminar";
             this.btnEliminarActive.ToolTipText = "Eliminar";
             this.btnEliminarActive.Click += new System.EventHandler(this.btnEliminarActive_Click);
@@ -314,11 +315,25 @@ namespace Tecnoservice.Formas
             // 
             this.proveedoresTableAdapter.ClearBeforeFill = true;
             // 
+            // dsPROVEEDOR
+            // 
+            this.dsPROVEEDOR.DataSetName = "dsPROVEEDOR";
+            this.dsPROVEEDOR.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // proveedoresBindingSource1
+            // 
+            this.proveedoresBindingSource1.DataMember = "Proveedores";
+            this.proveedoresBindingSource1.DataSource = this.dsPROVEEDOR;
+            // 
+            // proveedoresTableAdapter1
+            // 
+            this.proveedoresTableAdapter1.ClearBeforeFill = true;
+            // 
             // proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 382);
+            this.ClientSize = new System.Drawing.Size(945, 382);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.grpEstado);
@@ -336,6 +351,7 @@ namespace Tecnoservice.Formas
             this.Name = "proveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.proveedores_FormClosing);
             this.Load += new System.EventHandler(this.proveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
@@ -344,6 +360,8 @@ namespace Tecnoservice.Formas
             this.grpEstado.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPROVEEDOR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,9 +384,7 @@ namespace Tecnoservice.Formas
         private System.Windows.Forms.RadioButton Radbtn_Inactivo;
         private System.Windows.Forms.RadioButton Radbtn_Activo;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolStripButton btnActualizar;
         private System.Windows.Forms.ToolStripLabel btnEliminarActive;
         private System.Windows.Forms.Button btnEliminar;
         private DsProveedores dsProveedores;
@@ -380,5 +396,10 @@ namespace Tecnoservice.Formas
         private System.Windows.Forms.DataGridViewTextBoxColumn prvTelefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prvDireccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prvEstatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripLabel btnGuardar;
+        private System.Windows.Forms.ToolStripLabel btnActualizar;
+        private dsPROVEEDOR dsPROVEEDOR;
+        private System.Windows.Forms.BindingSource proveedoresBindingSource1;
+        private dsPROVEEDORTableAdapters.ProveedoresTableAdapter proveedoresTableAdapter1;
     }
 }

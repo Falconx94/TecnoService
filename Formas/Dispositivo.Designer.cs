@@ -42,27 +42,27 @@ namespace Tecnoservice.Formas
             this.txtDispositivo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnDeleteActive = new System.Windows.Forms.ToolStripLabel();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.dsDispositivos = new Tecnoservice.DsDispositivos();
-            this.dispositivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dispositivoTableAdapter = new Tecnoservice.DsDispositivosTableAdapters.DispositivoTableAdapter();
             this.dsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cltIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsModeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsProblemaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsIMEIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dispositivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDispositivos = new Tecnoservice.DsDispositivos();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteActive = new System.Windows.Forms.ToolStripLabel();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dispositivoTableAdapter = new Tecnoservice.DsDispositivosTableAdapters.DispositivoTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Radbtn_Inactivo = new System.Windows.Forms.RadioButton();
             this.Radbtn_Activo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDispositivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dispositivoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDispositivos)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,65 +172,6 @@ namespace Tecnoservice.Formas
             this.dataGridView2.Size = new System.Drawing.Size(644, 306);
             this.dataGridView2.TabIndex = 35;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnGuardar,
-            this.btnDeleteActive});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(993, 25);
-            this.toolStrip1.TabIndex = 36;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnDeleteActive
-            // 
-            this.btnDeleteActive.Name = "btnDeleteActive";
-            this.btnDeleteActive.Size = new System.Drawing.Size(50, 22);
-            this.btnDeleteActive.Text = "Eliminar";
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(271, 78);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(207, 20);
-            this.txtID.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "ID Dispositivo:";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(23, 22);
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // dsDispositivos
-            // 
-            this.dsDispositivos.DataSetName = "DsDispositivos";
-            this.dsDispositivos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dispositivoBindingSource
-            // 
-            this.dispositivoBindingSource.DataMember = "Dispositivo";
-            this.dispositivoBindingSource.DataSource = this.dsDispositivos;
-            // 
-            // dispositivoTableAdapter
-            // 
-            this.dispositivoTableAdapter.ClearBeforeFill = true;
-            // 
             // dsIdDataGridViewTextBoxColumn
             // 
             this.dsIdDataGridViewTextBoxColumn.DataPropertyName = "Ds_Id";
@@ -272,6 +213,65 @@ namespace Tecnoservice.Formas
             this.dsIMEIDataGridViewTextBoxColumn.HeaderText = "IMEI  del dispositivo";
             this.dsIMEIDataGridViewTextBoxColumn.Name = "dsIMEIDataGridViewTextBoxColumn";
             this.dsIMEIDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dispositivoBindingSource
+            // 
+            this.dispositivoBindingSource.DataMember = "Dispositivo";
+            this.dispositivoBindingSource.DataSource = this.dsDispositivos;
+            // 
+            // dsDispositivos
+            // 
+            this.dsDispositivos.DataSetName = "DsDispositivos";
+            this.dsDispositivos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnGuardar,
+            this.btnDeleteActive});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(993, 25);
+            this.toolStrip1.TabIndex = 36;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(53, 22);
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnDeleteActive
+            // 
+            this.btnDeleteActive.Name = "btnDeleteActive";
+            this.btnDeleteActive.Size = new System.Drawing.Size(50, 22);
+            this.btnDeleteActive.Text = "Eliminar";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(271, 78);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(207, 20);
+            this.txtID.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(269, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "ID Dispositivo:";
+            // 
+            // dispositivoTableAdapter
+            // 
+            this.dispositivoTableAdapter.ClearBeforeFill = true;
             // 
             // groupBox1
             // 
@@ -327,13 +327,15 @@ namespace Tecnoservice.Formas
             this.Controls.Add(this.txtDispositivo);
             this.Controls.Add(this.label5);
             this.Name = "Dispositivo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dispositivo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dispositivo_FormClosing);
             this.Load += new System.EventHandler(this.Dispositivo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dispositivoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDispositivos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDispositivos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dispositivoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -48,9 +48,9 @@ namespace Tecnoservice.Formas
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Radbtn_Activo = new System.Windows.Forms.RadioButton();
-            this.Radbtn_Espera = new System.Windows.Forms.RadioButton();
             this.Radbtn_Fin = new System.Windows.Forms.RadioButton();
+            this.Radbtn_Espera = new System.Windows.Forms.RadioButton();
+            this.Radbtn_Activo = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -144,30 +144,31 @@ namespace Tecnoservice.Formas
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(53, 22);
+            this.toolStripButton1.Text = "Guardar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(46, 22);
+            this.toolStripButton2.Text = "Buscar";
             // 
             // toolStripButton3
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(54, 22);
+            this.toolStripButton3.Text = "Eliminar";
             // 
             // Cbox_TipoServicio
             // 
@@ -214,17 +215,16 @@ namespace Tecnoservice.Formas
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             // 
-            // Radbtn_Activo
+            // Radbtn_Fin
             // 
-            this.Radbtn_Activo.AutoSize = true;
-            this.Radbtn_Activo.Location = new System.Drawing.Point(7, 20);
-            this.Radbtn_Activo.Name = "Radbtn_Activo";
-            this.Radbtn_Activo.Size = new System.Drawing.Size(55, 17);
-            this.Radbtn_Activo.TabIndex = 0;
-            this.Radbtn_Activo.TabStop = true;
-            this.Radbtn_Activo.Text = "Activo";
-            this.Radbtn_Activo.UseVisualStyleBackColor = true;
-            this.Radbtn_Activo.CheckedChanged += new System.EventHandler(this.Radbtn_Activo_CheckedChanged);
+            this.Radbtn_Fin.AutoSize = true;
+            this.Radbtn_Fin.Location = new System.Drawing.Point(6, 66);
+            this.Radbtn_Fin.Name = "Radbtn_Fin";
+            this.Radbtn_Fin.Size = new System.Drawing.Size(72, 17);
+            this.Radbtn_Fin.TabIndex = 2;
+            this.Radbtn_Fin.TabStop = true;
+            this.Radbtn_Fin.Text = "Finalizado";
+            this.Radbtn_Fin.UseVisualStyleBackColor = true;
             // 
             // Radbtn_Espera
             // 
@@ -238,16 +238,17 @@ namespace Tecnoservice.Formas
             this.Radbtn_Espera.UseVisualStyleBackColor = true;
             this.Radbtn_Espera.CheckedChanged += new System.EventHandler(this.Radbtn_Espera_CheckedChanged);
             // 
-            // Radbtn_Fin
+            // Radbtn_Activo
             // 
-            this.Radbtn_Fin.AutoSize = true;
-            this.Radbtn_Fin.Location = new System.Drawing.Point(6, 66);
-            this.Radbtn_Fin.Name = "Radbtn_Fin";
-            this.Radbtn_Fin.Size = new System.Drawing.Size(72, 17);
-            this.Radbtn_Fin.TabIndex = 2;
-            this.Radbtn_Fin.TabStop = true;
-            this.Radbtn_Fin.Text = "Finalizado";
-            this.Radbtn_Fin.UseVisualStyleBackColor = true;
+            this.Radbtn_Activo.AutoSize = true;
+            this.Radbtn_Activo.Location = new System.Drawing.Point(7, 20);
+            this.Radbtn_Activo.Name = "Radbtn_Activo";
+            this.Radbtn_Activo.Size = new System.Drawing.Size(55, 17);
+            this.Radbtn_Activo.TabIndex = 0;
+            this.Radbtn_Activo.TabStop = true;
+            this.Radbtn_Activo.Text = "Activo";
+            this.Radbtn_Activo.UseVisualStyleBackColor = true;
+            this.Radbtn_Activo.CheckedChanged += new System.EventHandler(this.Radbtn_Activo_CheckedChanged);
             // 
             // dataGridView1
             // 
@@ -279,7 +280,9 @@ namespace Tecnoservice.Formas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Servicios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servicios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Servicios_FormClosing);
             this.Load += new System.EventHandler(this.Servicios_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

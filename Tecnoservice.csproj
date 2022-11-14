@@ -56,10 +56,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsClientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DsClientesOros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsClientesOros.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DsDispositivos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DsDispositivos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPROVEEDOR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPROVEEDOR.xsd</DependentUpon>
     </Compile>
     <Compile Include="DsProveedores.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -170,6 +180,17 @@
     <None Include="DsClientes.xss">
       <DependentUpon>DsClientes.xsd</DependentUpon>
     </None>
+    <None Include="DsClientesOros.xsc">
+      <DependentUpon>DsClientesOros.xsd</DependentUpon>
+    </None>
+    <None Include="DsClientesOros.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsClientesOros.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DsClientesOros.xss">
+      <DependentUpon>DsClientesOros.xsd</DependentUpon>
+    </None>
     <None Include="DsDispositivos.xsc">
       <DependentUpon>DsDispositivos.xsd</DependentUpon>
     </None>
@@ -180,6 +201,17 @@
     </None>
     <None Include="DsDispositivos.xss">
       <DependentUpon>DsDispositivos.xsd</DependentUpon>
+    </None>
+    <None Include="dsPROVEEDOR.xsc">
+      <DependentUpon>dsPROVEEDOR.xsd</DependentUpon>
+    </None>
+    <None Include="dsPROVEEDOR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPROVEEDOR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPROVEEDOR.xss">
+      <DependentUpon>dsPROVEEDOR.xsd</DependentUpon>
     </None>
     <None Include="DsProveedores.xsc">
       <DependentUpon>DsProveedores.xsd</DependentUpon>

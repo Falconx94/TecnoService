@@ -19,10 +19,13 @@ namespace Tecnoservice.Formas
         SqlDataReader dr;
         bool band1, band2;
         char estado;
-        public Dispositivo()
+        string sdconexion;
+        public Dispositivo(string sconexion)
         {
             InitializeComponent();
             Consecutivo();
+            this.sdconexion = sconexion;
+            dispositivoTableAdapter.Connection.ConnectionString = this.sdconexion;
         }
         public void Consecutivo()
         {
@@ -73,6 +76,12 @@ namespace Tecnoservice.Formas
             txtIMEIDispo.Enabled = false;
             txtMarcaDispo.Enabled = false;
             txtModeloDispo.Enabled = false;
+        }
+
+        private void Dispositivo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form Menu = new Menu_Principal();
+            Menu.Show();
         }
 
         private void Dispositivo_Load(object sender, EventArgs e)

@@ -17,15 +17,17 @@ namespace Tecnoservice.Formas
         SqlConnection con = new SqlConnection(BD_Conex.conectar());
         SqlCommand cmd;
         SqlDataReader dr;
-        Cls_Proveedores clsprv = new Cls_Proveedores ();
+        Cls_Proveedores clsprv = new Cls_Proveedores();
         bool band1 = false, band2 = false;
         char estado;
         string Conex;
 
         private void proveedores_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dsPROVEEDOR.Proveedores' Puede moverla o quitarla según sea necesario.
+            this.proveedoresTableAdapter1.Fill(this.dsPROVEEDOR.Proveedores);
             // TODO: esta línea de código carga datos en la tabla 'dsProveedores.Proveedores' Puede moverla o quitarla según sea necesario.
-            this.proveedoresTableAdapter.Fill(this.dsProveedores.Proveedores);
+            //this.proveedoresTableAdapter.Fill(this.dsProveedores.Proveedores);
             Actualizar_Datagrid();
             Consecutivo();
         }
@@ -38,7 +40,8 @@ namespace Tecnoservice.Formas
 
         public void Actualizar_Datagrid()
         {
-            this.proveedoresTableAdapter.Fill(this.dsProveedores.Proveedores);
+            this.proveedoresTableAdapter1.Fill(this.dsPROVEEDOR.Proveedores);
+            //this.proveedoresTableAdapter.Fill(this.dsProveedores.Proveedores);
         }
         public void Consecutivo()
         {
@@ -62,24 +65,27 @@ namespace Tecnoservice.Formas
 
         public void GuardarProveedor()
         {
-            Validar_estado();
-            clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
-            clsprv.Prv_Razonsocial = txtRazo.Text;
-            clsprv.Prv_Nombre_Contaco = txtNomContac.Text;
-            clsprv.Prv_Telefono = txtTelef.Text;
-            clsprv.Prv_Direccion = txtDireccion.Text;
-            clsprv.Prv_estatus = estado;
-            if(clsprv.Guardar())
+            if (valida_info())
             {
-                MessageBox.Show("Datos Guardados Correctamente");
+                Validar_estado();
+                clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
+                clsprv.Prv_Razonsocial = txtRazo.Text;
+                clsprv.Prv_Nombre_Contaco = txtNomContac.Text;
+                clsprv.Prv_Telefono = txtTelef.Text;
+                clsprv.Prv_Direccion = txtDireccion.Text;
+                clsprv.Prv_Estatus = estado;
+                if (clsprv.Guardar())
+                {
+                    MessageBox.Show("Datos Guardados Correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Los Datos NO se Guardaron!!");
+                }
+                con.Close();
+                Consecutivo();
+                Actualizar_Datagrid();
             }
-            else
-            {
-                MessageBox.Show("Los Datos NO se Guardaron!!");
-            }
-            con.Close();
-            Consecutivo();
-            Actualizar_Datagrid();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -96,39 +102,80 @@ namespace Tecnoservice.Formas
             txtDireccion.Text = "";
             txtTelef.Text = "";
             Consecutivo();
-            Actualizar_Datagrid();        }
+            Actualizar_Datagrid(); }
 
         public void Actualizar()
         {
-            Validar_estado();
-            clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
-            clsprv.Prv_Razonsocial = txtRazo.Text;
-            clsprv.Prv_Nombre_Contaco = txtNomContac.Text;
-            clsprv.Prv_Telefono = txtTelef.Text;
-            clsprv.Prv_Direccion = txtDireccion.Text;
-            clsprv.Prv_estatus = estado;
-            if (clsprv.Actualizar())
+            if (valida_info())
             {
-                MessageBox.Show("Datos Guardados exitosamente");
+                Validar_estado();
+                clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
+                clsprv.Prv_Razonsocial = txtRazo.Text;
+                clsprv.Prv_Nombre_Contaco = txtNomContac.Text;
+                clsprv.Prv_Telefono = txtTelef.Text;
+                clsprv.Prv_Direccion = txtDireccion.Text;
+                clsprv.Prv_Estatus = estado;
+                if (clsprv.Actualizar())
+                {
+                    MessageBox.Show("Datos Guardados exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("Datos no Guardados");
+                }
+                con.Close();
+                Consecutivo();
+                Actualizar_Datagrid();
+            }
+        }
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+            Limpiar();
+        }
+
+        private void Radbtn_Activo_Click(object sender, EventArgs e)
+        {
+            if (Radbtn_Activo.Checked)
+            {
+                Radbtn_Inactivo.Checked = band1;
+                band2 = true;
             }
             else
             {
-                MessageBox.Show("Datos no Guardados");
+                Radbtn_Activo.Checked = band1;
+                band2 = false;
             }
-            con.Close();
-            Consecutivo();
-            Actualizar_Datagrid();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            txtIDProveedor.Text = this.dsProveedores.Proveedores[proveedoresBindingSource.Position].Prv_Id.ToString();
-            txtRazo.Text = this.dsProveedores.Proveedores[proveedoresBindingSource.Position].Prv_Razonsocial.ToString();
-            txtNomContac.Text = this.dsProveedores.Proveedores[proveedoresBindingSource.Position].Prv_Nombre_Contacto.ToString();
-            txtTelef.Text = this.dsProveedores.Proveedores[proveedoresBindingSource.Position].Prv_Telefono.ToString();
-            txtDireccion.Text = this.dsProveedores.Proveedores[proveedoresBindingSource.Position].Prv_Direccion.ToString();
-            char Status = Convert.ToChar(dsProveedores.Proveedores[proveedoresBindingSource.Position].Prv_Estatus);
-            switch(Status)
+            Actualizar();
+            Limpiar();
+        }
+
+        private void btnEliminarActive_Click(object sender, EventArgs e)
+        {
+            txtIDProveedor.Enabled = true;
+            btnEliminar.Visible = true;
+            txtRazo.Enabled = false;
+            txtNomContac.Enabled = false;
+            txtTelef.Enabled = false;
+            txtDireccion.Enabled = false;
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            txtIDProveedor.Text = this.dsPROVEEDOR.Proveedores[proveedoresBindingSource1.Position].Prv_Id.ToString();
+            txtRazo.Text = this.dsPROVEEDOR.Proveedores[proveedoresBindingSource1.Position].Prv_Razonsocial.ToString();
+            txtNomContac.Text = this.dsPROVEEDOR.Proveedores[proveedoresBindingSource1.Position].Prv_Nombre_Contacto.ToString();
+            txtTelef.Text = this.dsPROVEEDOR.Proveedores[proveedoresBindingSource1.Position].Prv_Telefono.ToString();
+            txtDireccion.Text = this.dsPROVEEDOR.Proveedores[proveedoresBindingSource1.Position].Prv_Direccion.ToString();
+            char Status = Convert.ToChar(dsPROVEEDOR.Proveedores[proveedoresBindingSource1.Position].Prv_Estatus);
+            switch (Status)
             {
                 case 'A':
                     Radbtn_Activo.Checked = true;
@@ -143,58 +190,45 @@ namespace Tecnoservice.Formas
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Eliminar();
-            Limpiar();
-        }
-
-        private void Radbtn_Activo_Click(object sender, EventArgs e)
-        {
-            if(Radbtn_Activo.Checked)
-            {
-                Radbtn_Inactivo.Checked = band1;
-                band2 = true;
-            }
-            else
-            {
-                Radbtn_Activo.Checked = band1;
-                band2 = false;
-            }
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            Eliminar();
-            Limpiar();
-        }
-
-        private void btnEliminarActive_Click(object sender, EventArgs e)
-        {
-            txtIDProveedor.Enabled = true;
-            btnEliminar.Visible = true;
-            txtRazo.Enabled = false;
-            txtNomContac.Enabled = false;
-            txtTelef.Enabled = false;
-            txtDireccion.Enabled = false;
-        }
-
         public void Eliminar()
         {
-            clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
-            if (clsprv.Eliminar())
+            if (valida_info())
             {
-                MessageBox.Show("Datos Eliminados");
+                clsprv.Prv_Id = Convert.ToInt32(txtIDProveedor.Text);
+                clsprv.Prv_Razonsocial = txtRazo.Text;
+                clsprv.Prv_Nombre_Contaco = txtNomContac.Text;
+                clsprv.Prv_Telefono = txtTelef.Text;
+                clsprv.Prv_Direccion = txtDireccion.Text;
+                clsprv.Prv_Estatus = estado;
+                if (clsprv.Eliminar())
+                {
+                    MessageBox.Show("Datos Eliminados");
+                }
+                else
+                {
+                    MessageBox.Show("Datos NO ELIMINADOS!!!");
+                }
+                con.Close();
+                Consecutivo();
+                Actualizar_Datagrid();
             }
-            else
-            {
-                MessageBox.Show("Datos NO ELIMINADOS!!!");
-            }
-            con.Close();
-            Consecutivo();
-            Actualizar_Datagrid();
         }
 
+        private void proveedores_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form Menu = new Menu_Principal();
+            Menu.Show();
+        }
 
+        public bool valida_info()
+        {
+            if (txtRazo.Text == "" || txtNomContac.Text == "" || txtTelef.Text == "" || txtDireccion.Text == "")
+            {
+                MessageBox.Show("Asegurar que los campos esten LLenos");
+                band1 = false;
+            }
+            else band1 = true;
+            return band1;
+        }
     }
 }

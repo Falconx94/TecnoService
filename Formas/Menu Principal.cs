@@ -7,22 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tecnoservice.Formas;
+using Tecnoservice.Class;
+
 
 namespace Tecnoservice.Formas
 {
     public partial class Menu_Principal : Form
     {
+        string scon;
         Abonos ab = new Abonos();
         Clientes clt = new Clientes();
         compras cmp = new compras();
-        Dispositivo dsp = new Dispositivo();
+       // Dispositivo dsp = new Dispositivo(this.scon);
         proveedores prv = new proveedores();
         Servicios srv = new Servicios();
         Venta vnt = new Venta();
+       
+
+
         public Menu_Principal()
         {
             InitializeComponent();
+           this.scon  = BD_Conex.conectar();
         }
 
         private void btnAbonos_Click(object sender, EventArgs e)
@@ -34,7 +40,7 @@ namespace Tecnoservice.Formas
         private void btnClientes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            clt.Show();
+            clt.ShowDialog();
         }
 
         private void btnCompras_Click(object sender, EventArgs e)
@@ -45,8 +51,10 @@ namespace Tecnoservice.Formas
 
         private void btnDispositivo_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
-            dsp.Show();
+            Dispositivo dsp = new Dispositivo(this.scon);
+            dsp.ShowDialog();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
@@ -65,6 +73,17 @@ namespace Tecnoservice.Formas
         {
             this.Hide();
             vnt.Show();
+        }
+
+        private void Menu_Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToShortTimeString();
+            lblfecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

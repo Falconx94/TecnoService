@@ -21,5 +21,11 @@ namespace Tecnoservice.Formas
         {
 
         }
+
+        private void Abonos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form Menu = new Menu_Principal();
+            Menu.Show();
+        }
     }
 }

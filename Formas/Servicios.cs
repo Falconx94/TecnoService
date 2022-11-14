@@ -45,5 +45,16 @@ namespace Tecnoservice.Formas
             else
                 Radbtn_Espera.Checked = band;
         }
+
+        private void Servicios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form Menu = new Menu_Principal();
+            Menu.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

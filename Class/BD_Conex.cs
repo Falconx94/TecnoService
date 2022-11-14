@@ -10,7 +10,7 @@ namespace Tecnoservice.Class
 {
     public class BD_Conex
     {
-        static string servidor = "OROS23";
+        static string servidor = "FALCON-DELL\\FALCON_SQL";
         public static string conectar()
         {
                string conex = @"Data Source="+servidor+";Initial Catalog=TecnoService;Integrated Security=True";

@@ -11,8 +11,8 @@ namespace Tecnoservice.Class
 {
     class Cls_Proveedores
     {
-        BD_Conex scon = new BD_Conex();
-        SqlDataReader dr;
+        //BD_Conex scon = new BD_Conex();
+        //SqlDataReader dr;
         bool band;
 
         public int Prv_Id { get; set; }
@@ -20,7 +20,7 @@ namespace Tecnoservice.Class
         public string Prv_Nombre_Contaco { get; set; }
         public string Prv_Telefono { get; set; }
         public string Prv_Direccion { get; set; }
-        public char Prv_estatus { get; set; }
+        public char Prv_Estatus { get; set; }
 
         public bool Guardar()
         {
@@ -30,12 +30,12 @@ namespace Tecnoservice.Class
             cmd.CommandText = "SP_Proveedores";
 
             cmd.Parameters.AddWithValue("@OP", 1);
-            cmd.Parameters.AddWithValue("@Prov_id", Prv_Id);
-            cmd.Parameters.AddWithValue("@Prov_Ras_Soci", Prv_Razonsocial);
-            cmd.Parameters.AddWithValue("@Prov_Nom_Contac", Prv_Nombre_Contaco);
+            cmd.Parameters.AddWithValue("@Prov_Id", Prv_Id);
+            cmd.Parameters.AddWithValue("@Prov_RasSoci", Prv_Razonsocial);
+            cmd.Parameters.AddWithValue("@Prov_NomContac", Prv_Nombre_Contaco);
             cmd.Parameters.AddWithValue("@Prov_Telefono", Prv_Telefono);
             cmd.Parameters.AddWithValue("@Prov_Direccion", Prv_Direccion);
-            cmd.Parameters.AddWithValue("@Prov_estatus", Prv_estatus);
+            cmd.Parameters.AddWithValue("@Prov_estatus", Prv_Estatus);
 
             try
             {
@@ -59,12 +59,12 @@ namespace Tecnoservice.Class
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "SP_Proveedores";
             cmd.Parameters.AddWithValue("@OP", 3);
-            cmd.Parameters.AddWithValue("@Prov_id", Prv_Id);
-            cmd.Parameters.AddWithValue("@Prov_Ras_Soci", Prv_Razonsocial);
-            cmd.Parameters.AddWithValue("@Prov_Nom_Contac", Prv_Nombre_Contaco);
+            cmd.Parameters.AddWithValue("@Prov_Id", Prv_Id);
+            cmd.Parameters.AddWithValue("@Prov_RasSoci", Prv_Razonsocial);
+            cmd.Parameters.AddWithValue("@Prov_NomContac", Prv_Nombre_Contaco);
             cmd.Parameters.AddWithValue("@Prov_Telefono", Prv_Telefono);
             cmd.Parameters.AddWithValue("@Prov_Direccion", Prv_Direccion);
-            cmd.Parameters.AddWithValue("@Prov_Estatus", Prv_estatus);
+            cmd.Parameters.AddWithValue("@Prov_estatus", Prv_Estatus);
             try
             {
                 con.Open();
@@ -88,7 +88,12 @@ namespace Tecnoservice.Class
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "SP_Proveedores";
             cmd.Parameters.AddWithValue("@OP", 5);
-            cmd.Parameters.AddWithValue("@Pro_id",Prv_Id);
+            cmd.Parameters.AddWithValue("@Prov_Id",Prv_Id);
+            cmd.Parameters.AddWithValue("@Prov_RasSoci", Prv_Razonsocial);
+            cmd.Parameters.AddWithValue("@Prov_NomContac", Prv_Nombre_Contaco);
+            cmd.Parameters.AddWithValue("@Prov_Telefono", Prv_Telefono);
+            cmd.Parameters.AddWithValue("@Prov_Direccion", Prv_Direccion);
+            cmd.Parameters.AddWithValue("@Prov_estatus", Prv_Estatus);
 
             try
             {

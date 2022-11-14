@@ -48,6 +48,8 @@ namespace Tecnoservice.Formas
             this.cltApMaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cltTelefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cltEstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dsClientesOros = new Tecnoservice.DsClientesOros();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsClientes = new Tecnoservice.DsClientes();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -61,7 +63,10 @@ namespace Tecnoservice.Formas
             this.btnDelete = new System.Windows.Forms.Button();
             this.clientesTableAdapter = new Tecnoservice.DsClientesTableAdapters.ClientesTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.clientesTableAdapter1 = new Tecnoservice.DsClientesOrosTableAdapters.ClientesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsClientesOros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -171,9 +176,9 @@ namespace Tecnoservice.Formas
             this.dataGridView1.Location = new System.Drawing.Point(266, 121);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(667, 306);
             this.dataGridView1.TabIndex = 17;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // cltIdDataGridViewTextBoxColumn
             // 
@@ -217,6 +222,16 @@ namespace Tecnoservice.Formas
             this.cltEstatusDataGridViewTextBoxColumn.Name = "cltEstatusDataGridViewTextBoxColumn";
             this.cltEstatusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.dsClientesOros;
+            // 
+            // dsClientesOros
+            // 
+            this.dsClientesOros.DataSetName = "DsClientesOros";
+            this.dsClientesOros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataMember = "Clientes";
@@ -242,22 +257,22 @@ namespace Tecnoservice.Formas
             // 
             // btnGuardar
             // 
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(23, 22);
+            this.btnGuardar.Size = new System.Drawing.Size(53, 22);
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnActualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(16, 22);
-            this.btnActualizar.Text = "toolStripButton1";
+            this.btnActualizar.Size = new System.Drawing.Size(59, 22);
+            this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnDeleteActive
@@ -323,6 +338,10 @@ namespace Tecnoservice.Formas
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
+            // clientesTableAdapter1
+            // 
+            this.clientesTableAdapter1.ClearBeforeFill = true;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,9 +362,13 @@ namespace Tecnoservice.Formas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes-Dispositivo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Clientes_FormClosing);
             this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsClientesOros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -389,5 +412,8 @@ namespace Tecnoservice.Formas
         private System.Windows.Forms.DataGridViewTextBoxColumn cltTelefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cltEstatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolTip toolTip1;
+        private DsClientesOros dsClientesOros;
+        private System.Windows.Forms.BindingSource clientesBindingSource1;
+        private DsClientesOrosTableAdapters.ClientesTableAdapter clientesTableAdapter1;
     }
 }
